@@ -4,6 +4,7 @@ const Product = require("./Product");
 const User = require("./User");
 const ProductsCart = require("./ProductsCart");
 const Purchase = require("./Purchase");
+const EmailCode = require("./EmailCode");
 
 
 Product.belongsTo(Category);
@@ -23,3 +24,6 @@ User.hasMany(Purchase);// un usuario va a tener muchas compras
 
 Purchase.belongsTo(Product);// una compra tiene un solo producto
 Product.hasMany(Purchase);// un producto tiene muchas compras
+
+EmailCode.belongsTo(User); // llave foranea para el codigo
+User.hasOne(EmailCode);

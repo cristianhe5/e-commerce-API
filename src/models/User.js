@@ -22,6 +22,11 @@ const User = sequelize.define('user', {
     phone: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    isVerified: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     }
 });
 User.prototype.toJSON = function () {
